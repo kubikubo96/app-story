@@ -1,23 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-
+import { NativeRouter, Route } from "react-router-native";
 import useCachedResources from './hooks/useCachedResources';
-import useColorScheme from './hooks/useColorScheme';
-import Navigation from './navigation';
+
+const ContentApp = React.lazy(() => import("./components/ContentApp"))
+
 
 export default function App() {
   const isLoadingComplete = useCachedResources();
-  const colorScheme = useColorScheme();
 
   if (!isLoadingComplete) {
     return null;
   } else {
     return (
-      <SafeAreaProvider>
-        <Navigation colorScheme={colorScheme} />
-        <StatusBar />
-      </SafeAreaProvider>
+      <NativeRouter>
+        <SafeAreaProvider>
+          <Route path="/" name="home" component={ContentApp} />
+        </SafeAreaProvider>
+      </NativeRouter>
     );
   }
 }
