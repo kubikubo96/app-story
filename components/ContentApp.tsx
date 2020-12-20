@@ -1,11 +1,11 @@
 import React, { Suspense } from "react"
 import { NativeRouter, Route, Redirect } from "react-router-native";
 import routes from '../routes';
-import { View, Text } from 'react-native';
+import Loading from "./common/Loading";
 
 const TheContent = () => {
   return (
-    <Suspense fallback={<View><Text>...Loading</Text></View>}>
+    <Suspense fallback={<Loading />}>
       <NativeRouter>
         {routes.map((route: any, idx: number) => {
           return (
