@@ -1,13 +1,10 @@
 import React from 'react';
 import { NativeRouter, Route } from "react-router-native";
-import Loading from './components/common/Loading';
 import useCachedResources from './hooks/useCachedResources';
 import { Platform, StyleSheet, SafeAreaView } from 'react-native'
+import ContentApp from "./components/ContentApp";
 
-const ContentApp = React.lazy(() => import("./components/ContentApp"))
-
-
-export default function App() {
+const App = () => {
   const isLoadingComplete = useCachedResources();
   const styles = StyleSheet.create({
     container: {
@@ -20,13 +17,13 @@ export default function App() {
   } else {
     return (
       <SafeAreaView style={styles.container}>
-        <React.Suspense fallback={<Loading />}>
           <NativeRouter>
-            <Route path="/" name="home" component={ContentApp} />
+            <Route path="/" name="home" render={() => <ContentApp/>} />
           </NativeRouter>
-        </React.Suspense>
       </SafeAreaView>
     );
   }
-}
+};
+
+export default App
 

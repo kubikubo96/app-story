@@ -1,11 +1,9 @@
-import React, { Suspense } from "react"
+import React from "react"
 import { NativeRouter, Route, Redirect } from "react-router-native";
-import routes from '../routes';
-import Loading from "./common/Loading";
+import routes from "../routes";
 
-const TheContent = () => {
+const ContentApp = () => {
   return (
-    <Suspense fallback={<Loading />}>
         <NativeRouter>
           {routes.map((route: any, idx: number) => {
             return (
@@ -25,8 +23,7 @@ const TheContent = () => {
           })}
           <Redirect from="/" exact to="/Home" />
         </NativeRouter>
-    </Suspense>
   )
-}
+};
 
-export default React.memo(TheContent)
+export default ContentApp
