@@ -5,14 +5,14 @@ import routes from "../routes";
 const ContentApp = () => {
   return (
     <NativeRouter>
-      {routes.map((route: any, idx: number) => {
+      {routes.map((route, idx) => {
         return (
           route.component && (
             <Route
               key={idx}
               path={route.path}
               exact={route.exact}
-              render={(props: any) => (
+              render={(props) => (
                 <React.Fragment>
                   <route.component {...props} />
                 </React.Fragment>
