@@ -7,15 +7,14 @@ import DetailsScreen from "./DetailsScreen";
 import {main} from "../../styles/main";
 import {Card, Title, Paragraph} from 'react-native-paper';
 import Br from "../common/br/Br";
+import ButtonPrimary from "../common/button/ButtonPrimary";
 
 const ContentHome = (props) => {
     const {navigation} = props;
     return (
         <View style={styles.home}>
             <TouchableOpacity style={styles.viewButtonReadStory}>
-                <Button style={styles.buttonReadStory} onPress={() => navigation.navigate('Details')}>
-                    XEM TRUYỆN
-                </Button>
+                <ButtonPrimary text="XEM TRUYỆN" onPress={() => navigation.navigate('Details')}/>
             </TouchableOpacity>
             <Button style={styles.buttonListStory} status='basic'>
                 DANH SÁCH TRUYỆN KHÁC
