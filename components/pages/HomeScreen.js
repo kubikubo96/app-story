@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {ScrollView, StyleSheet, View} from 'react-native';
+import {ScrollView, StyleSheet, Text, View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import DetailsScreen from "./DetailsScreen";
@@ -7,7 +7,7 @@ import {main} from "../../styles/main";
 import {Card, Paragraph, Title} from 'react-native-paper';
 import Br from "../common/br/Br";
 import ButtonPrimary from "../common/button/ButtonPrimary";
-import ButtonBasic from "../common/button/ButtonBasic";
+import ButtonOutline from "../common/button/ButtonOutline";
 
 const ContentHome = (props) => {
     const {navigation} = props;
@@ -16,7 +16,9 @@ const ContentHome = (props) => {
             <View style={styles.buttonSeeStory}>
                 <ButtonPrimary text="XEM TRUYỆN" onPress={() => navigation.navigate('Details')}/>
             </View>
-            <ButtonBasic text=" DANH SÁCH TRUYỆN KHÁC"/>
+            <View>
+                <Text style={styles.titleListStory}>DANH SÁCH TRUYỆN KHÁC</Text>
+            </View>
             <View style={styles.card}>
                 <ScrollView>
                     <Card>
@@ -119,15 +121,28 @@ const styles = StyleSheet.create({
         height: 350,
     },
     titleNormal: {
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        color: main.darkBold
     },
     contentStory: {
         fontSize: 15,
         color: main.darkShy
     },
     buttonSeeStory: {
-        width: '95%',
-        justifyContent: 'center',
+        width: '100%',
         marginBottom: 30,
+        alignItems: 'center',
+    },
+    titleListStory: {
+        fontSize: 19,
+        fontWeight: "normal",
+        fontStyle: "normal",
+        lineHeight: 24,
+        letterSpacing: 0,
+        textAlign: "left",
+        color: main.darkBold
+    },
+    titleStory: {
+        color: main.blueDefault
     }
 });

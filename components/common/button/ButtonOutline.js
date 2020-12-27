@@ -3,10 +3,10 @@ import {Button} from "@ui-kitten/components";
 import {StyleSheet} from "react-native";
 import {main} from "../../../styles/main";
 
-const ButtonPrimary = (props) => {
+const ButtonOutline = (props) => {
     const {text, onPress} = props;
     return (
-        <Button style={styles.button} onPress={onPress}>
+        <Button style={styles.button} onPress={onPress} appearance='outline' status='info'>
             {text}
         </Button>
     )
@@ -14,12 +14,8 @@ const ButtonPrimary = (props) => {
 
 const styles = StyleSheet.create({
     button: {
-        borderStyle: "solid",
-        borderColor: 0,
-        fontSize: 16,
         width: main.mainWidth,
-        backgroundColor: main.blueDefault,
     },
 });
 
-export default ButtonPrimary
+export default ButtonOutline
