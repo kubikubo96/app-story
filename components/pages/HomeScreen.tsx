@@ -64,6 +64,7 @@ const styles = StyleSheet.create({
   },
   buttonReadStory: {
     backgroundColor: main.blueDefault,
+    borderWidth: 0
   },
   buttonAnotherApp: {
     marginBottom: 20,
