@@ -9,4 +9,6 @@ export const main = {
   blueShyFace: "#8b9dc3",
   blueShyMinFace: "#8b9dc3",
   blueDefault: "#0F8FF2",
+
+  mainRadius: 5,
 };

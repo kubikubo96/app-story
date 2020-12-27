@@ -14,8 +14,16 @@ const ButtonPrimary = (props) => {
 
 const styles = StyleSheet.create({
     button: {
+        borderRadius: main.mainRadius,
+        borderStyle: "solid",
+        borderColor: 0,
+        fontSize: 16,
+        fontWeight: "normal",
+        fontStyle: "normal",
+        lineHeight: 24,
+        letterSpacing: 0,
+        textAlign: "center",
         backgroundColor: main.blueDefault,
-        borderWidth: 0,
     },
 });
 
