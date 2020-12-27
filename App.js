@@ -11,12 +11,7 @@ import { Provider as StoreProvider } from 'react-redux';
 
 const App = () => {
   const isLoadingComplete = useCachedResources();
-  const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      paddingTop: Platform.OS === 'android' ? 25 : 0
-    },
-  });
+
   if (!isLoadingComplete) {
     return null;
   } else {
@@ -38,3 +33,9 @@ const App = () => {
 
 export default App
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingTop: Platform.OS === 'android' ? 25 : 0
+  },
+});
