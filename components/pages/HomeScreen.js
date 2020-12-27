@@ -1,24 +1,22 @@
 import * as React from 'react';
-import {StyleSheet, TouchableOpacity, View, ScrollView} from 'react-native';
+import {ScrollView, StyleSheet, View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import {Button} from '@ui-kitten/components';
 import DetailsScreen from "./DetailsScreen";
 import {main} from "../../styles/main";
-import {Card, Title, Paragraph} from 'react-native-paper';
+import {Card, Paragraph, Title} from 'react-native-paper';
 import Br from "../common/br/Br";
 import ButtonPrimary from "../common/button/ButtonPrimary";
+import ButtonBasic from "../common/button/ButtonBasic";
 
 const ContentHome = (props) => {
     const {navigation} = props;
     return (
         <View style={styles.home}>
-            <TouchableOpacity style={styles.viewButtonReadStory}>
+            <View style={styles.buttonSeeStory}>
                 <ButtonPrimary text="XEM TRUYỆN" onPress={() => navigation.navigate('Details')}/>
-            </TouchableOpacity>
-            <Button style={styles.buttonListStory} status='basic'>
-                DANH SÁCH TRUYỆN KHÁC
-            </Button>
+            </View>
+            <ButtonBasic text=" DANH SÁCH TRUYỆN KHÁC"/>
             <View style={styles.card}>
                 <ScrollView>
                     <Card>
@@ -87,7 +85,7 @@ const styles = StyleSheet.create({
     },
     viewButtonReadStory: {
         marginBottom: 50,
-        width: '90%',
+        width: '95%',
     },
     buttonReadStory: {
         backgroundColor: main.blueDefault,
@@ -95,7 +93,7 @@ const styles = StyleSheet.create({
     },
     buttonAnotherApp: {
         marginBottom: 20,
-        width: '90%',
+        width: '95%',
     },
     buttonAnotherStore: {
         color: main.darkBold
@@ -104,7 +102,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 20,
         color: main.darkBold,
-        width: '90%'
+        width: '95%'
     },
     listStory: {
         flex: 1,
@@ -117,7 +115,7 @@ const styles = StyleSheet.create({
     },
     card: {
         marginTop: 15,
-        width: '90%',
+        width: '95%',
         height: 350,
     },
     titleNormal: {
@@ -126,5 +124,10 @@ const styles = StyleSheet.create({
     contentStory: {
         fontSize: 15,
         color: main.darkShy
+    },
+    buttonSeeStory: {
+        width: '95%',
+        justifyContent: 'center',
+        marginBottom: 30,
     }
 });
